@@ -5,11 +5,14 @@ const useCounter = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter - 1);
+      setCounter((prevCounter) => prevCounter + 1);
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
+
+  // kita bisa mereturn state disini supaya bisa digunakan di component yang lain
+  return counter;
 };
 
 export default useCounter;
